@@ -26,6 +26,15 @@ public class Lotto {
             System.out.print(i+ " ");
         }
         System.out.println("\nTime elapsed: "+(endTime-startTime));
+
+        System.out.println("Version 3:");
+        startTime = System.nanoTime();
+        int[] tipp3 = sixOfFortynineV3();
+        endTime = System.nanoTime();
+        for (int i : tipp3) {
+            System.out.print(i+ " ");
+        }
+        System.out.println("\nTime elapsed: "+(endTime-startTime));
     }
 
     public static int[] sixOfFortynineV1() {
@@ -57,6 +66,26 @@ public class Lotto {
             } while (Arrays.binarySearch(tipp, tmp) > 0);
             tipp[0] = tmp;
             Arrays.sort(tipp);
+        }
+        return tipp;
+
+    }
+
+    public static int[] sixOfFortynineV3() {
+        Random random = new Random();
+        int[] tipp = new int[6];
+        tipp[0] = random.nextInt(6) + 1;
+        int[] sortedTipp = Arrays.copyOf(tipp, tipp.length);
+        Arrays.sort(sortedTipp);
+        int tmp = 0;
+        for (int i = 1; i < tipp.length; i++) {
+
+            do {
+                tmp = random.nextInt(6) + 1;
+            } while (Arrays.binarySearch(sortedTipp, tmp) > 0);
+            tipp[i] = tmp;
+            sortedTipp[0] = tmp;
+            Arrays.sort(sortedTipp);
         }
         return tipp;
 
