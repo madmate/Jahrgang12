@@ -36,7 +36,7 @@ public class Lotto {
         }
         System.out.println("\nTime elapsed: "+(endTime-startTime));
     }
-
+    //Version with checking all elements for doubles
     public static int[] sixOfFortynineV1() {
         Random random = new Random();
         int[] tip = new int[6];
@@ -50,7 +50,7 @@ public class Lotto {
         return tip;
 
     }
-
+    //Version with BinarySearch and sorted return
     public static int[] sixOfFortynineV2() {
         Random random = new Random();
         int[] tip = new int[6];
@@ -65,7 +65,7 @@ public class Lotto {
         return tip;
 
     }
-
+    //Version with BinarySearch and unsorted return
     public static int[] sixOfFortynineV3() {
         Random random = new Random();
         int[] tip = new int[6];
