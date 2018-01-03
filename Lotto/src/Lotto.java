@@ -11,27 +11,27 @@ public class Lotto {
 
         System.out.println("Version 1:");
         startTime = System.nanoTime();
-        int[] tipp1 = sixOfFortynineV1();
+        int[] tip1 = sixOfFortynineV1();
         endTime = System.nanoTime();
-        for (int i : tipp1) {
+        for (int i : tip1) {
           System.out.print(i+ " ");
         }
         System.out.println("\nTime elapsed: "+(endTime-startTime));
 
         System.out.println("Version 2:");
         startTime = System.nanoTime();
-        int[] tipp2 = sixOfFortynineV2();
+        int[] tip2 = sixOfFortynineV2();
         endTime = System.nanoTime();
-        for (int i : tipp2) {
+        for (int i : tip2) {
             System.out.print(i+ " ");
         }
         System.out.println("\nTime elapsed: "+(endTime-startTime));
 
         System.out.println("Version 3:");
         startTime = System.nanoTime();
-        int[] tipp3 = sixOfFortynineV3();
+        int[] tip3 = sixOfFortynineV3();
         endTime = System.nanoTime();
-        for (int i : tipp3) {
+        for (int i : tip3) {
             System.out.print(i+ " ");
         }
         System.out.println("\nTime elapsed: "+(endTime-startTime));
@@ -39,64 +39,56 @@ public class Lotto {
 
     public static int[] sixOfFortynineV1() {
         Random random = new Random();
-        int[] tipp = new int[6];
-        tipp[0] = random.nextInt(6) + 1;
-        int tmp = 0;
-        for (int i = 1; i < tipp.length; i++) {
-
+        int[] tip = new int[6];
+        int tmp;
+        for (int i = 0; i < tip.length; i++) {
             do {
               tmp = random.nextInt(6) + 1;
-            } while (checkForDoubles(tipp, i, tmp));
-            tipp[i] = tmp;
+            } while (checkForDoubles(tip, i, tmp));
+            tip[i] = tmp;
         }
-        return tipp;
+        return tip;
 
     }
 
     public static int[] sixOfFortynineV2() {
         Random random = new Random();
-        int[] tipp = new int[6];
-        tipp[0] = random.nextInt(6) + 1;
-        Arrays.sort(tipp);
-        int tmp = 0;
-        for (int i = 1; i < tipp.length; i++) {
-
+        int[] tip = new int[6];
+        int tmp;
+        for (int i = 0; i < tip.length; i++) {
             do {
                 tmp = random.nextInt(6) + 1;
-            } while (Arrays.binarySearch(tipp, tmp) > 0);
-            tipp[0] = tmp;
-            Arrays.sort(tipp);
+            } while (Arrays.binarySearch(tip, tmp) > 0);
+            tip[0] = tmp;
+            Arrays.sort(tip);
         }
-        return tipp;
+        return tip;
 
     }
 
     public static int[] sixOfFortynineV3() {
         Random random = new Random();
-        int[] tipp = new int[6];
-        tipp[0] = random.nextInt(6) + 1;
-        int[] sortedTipp = Arrays.copyOf(tipp, tipp.length);
-        Arrays.sort(sortedTipp);
-        int tmp = 0;
-        for (int i = 1; i < tipp.length; i++) {
-
+        int[] tip = new int[6];
+        int[] sortedTip = new int[6];
+        int tmp;
+        for (int i = 0; i < tip.length; i++) {
             do {
                 tmp = random.nextInt(6) + 1;
-            } while (Arrays.binarySearch(sortedTipp, tmp) > 0);
-            tipp[i] = tmp;
-            sortedTipp[0] = tmp;
-            Arrays.sort(sortedTipp);
+            } while (Arrays.binarySearch(sortedTip, tmp) > 0);
+            tip[i] = tmp;
+            sortedTip[0] = tmp;
+            Arrays.sort(sortedTip);
         }
-        return tipp;
+        return tip;
 
     }
 
-    private static boolean checkForDoubles(int[] tipp, int i, int tmp) {
+    private static boolean checkForDoubles(int[] tip, int i, int tmp) {
         int j = 0;
-        while (tipp[j] != tmp && j < i) {
+        while (tip[j] != tmp && j < i) {
             j++;
         }
-        return tipp[j] == tmp;
+        return tip[j] == tmp;
 
     }
 }
