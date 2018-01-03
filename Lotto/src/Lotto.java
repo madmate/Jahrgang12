@@ -6,17 +6,26 @@ import java.util.Random;
  */
 public class Lotto {
     public static void main(String[] args) {
+        long startTime;
+        long endTime;
+
         System.out.println("Version 1:");
+        startTime = System.nanoTime();
         int[] tipp1 = sixOfFortynineV1();
+        endTime = System.nanoTime();
         for (int i : tipp1) {
           System.out.print(i+ " ");
         }
+        System.out.println("\nTime elapsed: "+(endTime-startTime));
 
-        System.out.println("\nVersion 2:");
+        System.out.println("Version 2:");
+        startTime = System.nanoTime();
         int[] tipp2 = sixOfFortynineV2();
+        endTime = System.nanoTime();
         for (int i : tipp2) {
             System.out.print(i+ " ");
         }
+        System.out.println("\nTime elapsed: "+(endTime-startTime));
     }
 
     public static int[] sixOfFortynineV1() {
