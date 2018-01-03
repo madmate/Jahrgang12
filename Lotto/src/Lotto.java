@@ -43,7 +43,7 @@ public class Lotto {
         int tmp;
         for (int i = 0; i < tip.length; i++) {
             do {
-              tmp = random.nextInt(6) + 1;
+                tmp = random.nextInt(49) + 1;
             } while (checkForDoubles(tip, i, tmp));
             tip[i] = tmp;
         }
@@ -57,7 +57,7 @@ public class Lotto {
         int tmp;
         for (int i = 0; i < tip.length; i++) {
             do {
-                tmp = random.nextInt(6) + 1;
+                tmp = random.nextInt(49) + 1;
             } while (Arrays.binarySearch(tip, tmp) > 0);
             tip[0] = tmp;
             Arrays.sort(tip);
@@ -73,7 +73,7 @@ public class Lotto {
         int tmp;
         for (int i = 0; i < tip.length; i++) {
             do {
-                tmp = random.nextInt(6) + 1;
+                tmp = random.nextInt(49) + 1;
             } while (Arrays.binarySearch(sortedTip, tmp) > 0);
             tip[i] = tmp;
             sortedTip[0] = tmp;
