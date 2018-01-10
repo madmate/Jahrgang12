@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/13092018/13092018.iml" filepath="$PROJECT_DIR$/13092018/13092018.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Algorithms/Algorithms.iml" filepath="$PROJECT_DIR$/Algorithms/Algorithms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/InverseArray/InverseArray.iml" filepath="$PROJECT_DIR$/InverseArray/InverseArray.iml" />
       <module fileurl="file://$PROJECT_DIR$/Jahrgang 12.iml" filepath="$PROJECT_DIR$/Jahrgang 12.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lotto/Lotto.iml" filepath="$PROJECT_DIR$/Lotto/Lotto.iml" />
     </modules>

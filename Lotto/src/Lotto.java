@@ -35,6 +35,15 @@ public class Lotto {
             System.out.print(i+ " ");
         }
         System.out.println("\nTime elapsed: "+(endTime-startTime));
+
+        System.out.println("Version 4:");
+        startTime = System.nanoTime();
+        int[] tip4 = sixOfFortynineV3();
+        endTime = System.nanoTime();
+        for (int i : tip4) {
+            System.out.print(i + " ");
+        }
+        System.out.println("\nTime elapsed: " + (endTime - startTime));
     }
     //Version with checking all elements for doubles
     public static int[] sixOfFortynineV1() {
@@ -82,6 +91,21 @@ public class Lotto {
         return tip;
 
     }
+
+    public static int[] sixOfFortynineV4() {
+        Random random = new Random();
+        int[] tip = new int[6];
+        for (int i = 0; i < 6; i++) {
+            tip[i] = random.nextInt(6) + 1;
+            for (int j = 0; j < i; j++) {
+                if (tip[i] == tip[j]) {
+                    i = i - 1;
+                }
+            }
+        }
+        return tip;
+    }
+
 
     private static boolean checkForDoubles(int[] tip, int i, int tmp) {
         int j = 0;
